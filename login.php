@@ -38,10 +38,10 @@
 <body>
   <div class="container">
     <?php
-    $imeServera = "localhost";
-    $username = "root";
-    $lozinka = "";
-    $imeBaze = "bazaprojekt";
+    $imeServera = "studenti.sum.ba";
+    $username = "rwa052023";
+    $lozinka = "csdigital2023";
+    $imeBaze = "rwa052023";
     $KorisnickoIme=$_GET["email1"];
     $Lozinka=$_GET["lozinka1"];
 

@@ -12,10 +12,10 @@
 	}
 
 
-$imeServera = "localhost";
-$username = "root";
-$lozinka = "";
-$imeBaze = "bazaprojekt";
+$imeServera = "studenti.sum.ba";
+$username = "rwa052023";
+$lozinka = "csdigital2023";
+$imeBaze = "rwa052023";
 $ID=$_GET["id1"];
 $Uloga=$_GET["uloga"];
 

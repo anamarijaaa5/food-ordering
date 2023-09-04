@@ -10,10 +10,10 @@
 		echo "<script> window.location.assign('noaccess.php'); </script>";
 	}
 
-$imeServera = "localhost";
-$username = "root";
-$lozinka = "";
-$imeBaze = "bazaprojekt";
+$imeServera = "studenti.sum.ba";
+$username = "rwa052023";
+$lozinka = "csdigital2023";
+$imeBaze = "rwa052023";
 $Ime=$_GET["ime"];
 $Prezime=$_GET["prezime"];
 $BrTel=$_GET["brojtel"];

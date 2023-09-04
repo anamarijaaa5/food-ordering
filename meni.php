@@ -210,10 +210,10 @@ session_start();
     </h1>
 
     <?php
-    $imeServera = "localhost";
-    $username = "root";
-    $lozinka = "";
-    $imeBaze = "bazaprojekt";
+    $imeServera = "studenti.sum.ba";
+    $username = "rwa052023";
+    $lozinka = "csdigital2023";
+    $imeBaze = "rwa052023";
 
     $conn = new mysqli($imeServera, $username, $lozinka, $imeBaze);
 

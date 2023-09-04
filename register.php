@@ -37,10 +37,10 @@
 </head>
 <body>
 <?php
-$imeServera = "localhost";
-$username = "root";
-$lozinka = "";
-$imeBaze = "bazaprojekt";
+$imeServera = "studenti.sum.ba";
+$username = "rwa052023";
+$lozinka = "csdigital2023";
+$imeBaze = "rwa052023";
 $KorisnickoIme = $_GET["email"];
 $Lozinka = $_GET["lozinka"];
 $Lozinka2 = $_GET["lozinka2"];

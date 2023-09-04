@@ -180,10 +180,10 @@
 
  <div style="overflow:auto; height:500px; font-size: 20px;"> 
 <?php
-$imeServera = "localhost";
-$username = "root";
-$lozinka = "";
-$imeBaze = "bazaprojekt";
+$imeServera = "studenti.sum.ba";
+$username = "rwa052023";
+$lozinka = "csdigital2023";
+$imeBaze = "rwa052023";
 
 // Kreiranje konekcije
 $konekcija = new mysqli($imeServera, $username, $lozinka, $imeBaze);
