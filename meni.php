@@ -210,7 +210,7 @@ session_start();
     </h1>
 
     <?php
-    $imeServera = "studenti.sum.ba";
+    $imeServera = "localhost";
     $username = "rwa052023";
     $lozinka = "csdigital2023";
     $imeBaze = "rwa052023";

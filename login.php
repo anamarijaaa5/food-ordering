@@ -38,7 +38,7 @@
 <body>
   <div class="container">
     <?php
-    $imeServera = "studenti.sum.ba";
+    $imeServera = "localhost";
     $username = "rwa052023";
     $lozinka = "csdigital2023";
     $imeBaze = "rwa052023";

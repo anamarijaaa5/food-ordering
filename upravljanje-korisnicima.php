@@ -180,7 +180,7 @@
 
  <div style="overflow:auto; height:500px; font-size: 20px;"> 
 <?php
-$imeServera = "studenti.sum.ba";
+$imeServera = "localhost";
 $username = "rwa052023";
 $lozinka = "csdigital2023";
 $imeBaze = "rwa052023";

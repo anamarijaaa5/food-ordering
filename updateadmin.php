@@ -10,7 +10,7 @@
 		echo "<script> window.location.assign('noaccess.php'); </script>";
 	}
 
-$imeServera = "studenti.sum.ba";
+$imeServera = "localhost";
 $username = "rwa052023";
 $lozinka = "csdigital2023";
 $imeBaze = "rwa052023";

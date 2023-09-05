@@ -2,7 +2,7 @@
 session_start();
 
 // Uspostava konekcije
-$imeServera = "studenti.sum.ba";
+$imeServera = "localhost";
 $username = "rwa052023";
 $lozinka = "csdigital2023";
 $imeBaze = "rwa052023";
