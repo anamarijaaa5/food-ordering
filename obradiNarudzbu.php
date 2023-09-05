@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['login'])) {
+    echo "not_logged_in";
+    exit();
+}
+
 // Uspostava konekcije
 $imeServera = "localhost";
 $username = "rwa052023";

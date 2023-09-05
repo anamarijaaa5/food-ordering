@@ -8,10 +8,15 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function calculateTotalPrice(cart) {
+    return cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+}
+
 function displayCartItems() {
     const cartItemsDiv = document.getElementById('cartList');
     const numOfItemsSpan = document.getElementById('numOfItemsInCart');
     const orderButton = document.getElementById('orderButton');
+    const totalPriceSpan = document.getElementById('totalPrice');
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
     cartItemsDiv.innerHTML = '';
@@ -23,6 +28,7 @@ function displayCartItems() {
         cartItemsDiv.appendChild(emptyMessage);
 
         orderButton.style.display = 'none';
+        totalPriceSpan.textContent = '0';
     } else {
         cart.forEach((item, index) => {
             const cartItem = document.createElement('li');
@@ -31,6 +37,8 @@ function displayCartItems() {
                 <div>
                     ${item.name}
                     <span class="badge badge-warning badge-pill">${item.quantity}</span>
+                    x
+                    <span class="badge badge-success badge-pill">${item.price} KM</span>
                 </div>
                 <button class="btn btn-danger btn-sm" onclick="deleteItemFromCart(${index})"><i class="fas fa-trash"></i></button>
             `;
@@ -42,6 +50,9 @@ function displayCartItems() {
         
         // Prikaz ukupnog broja proizvoda u košarici
         numOfItemsSpan.textContent = cart.length;
+
+        // ažuriranje ukupne cijene
+        totalPriceSpan.textContent = calculateTotalPrice(cart).toFixed(2);
     }
 }
 
@@ -67,11 +78,8 @@ function updateCartIconQuantity() {
     document.getElementById('numOfItemsInCart').textContent = totalItems;
 }
 
-
 function placeOrder() {
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
-
-
     let orderDetails = cart.map(item => {
         return {
             productId: item.id,
@@ -88,6 +96,12 @@ function placeOrder() {
     })
     .then(response => response.text())
     .then(data => {
+        if (data === "not_logged_in") {
+            // Otvori modal za prijavu
+            $('#modalLRForm').modal('show');
+            return;
+        }
+
         // Ukloni sve proizvode iz košarice
         localStorage.removeItem('cart');
         displayCartItems();

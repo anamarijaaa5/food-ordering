@@ -194,7 +194,12 @@ session_start();
           <span class="cart-quantity badge badge-warning">0</span>
         </a>
 
-        <a class="btn btn-default btn-rounded my-3" href="odjava.php">Odjava</a>
+        <!-- show only if user is logged in -->
+        <?php if (isset($_SESSION['login'])): ?>
+          <a class="btn btn-default btn-rounded my-3" href="odjava.php">Odjava</a>
+        <?php else: ?>
+          <a class="btn btn-default btn-rounded my-3" href="#" data-toggle="modal" data-target="#modalLRForm">Prijava</a>
+        <?php endif; ?>
       </div>
     </div>
   </nav>
@@ -211,9 +216,9 @@ session_start();
 
     <?php
     $imeServera = "localhost";
-    $username = "rwa052023";
-    $lozinka = "csdigital2023";
-    $imeBaze = "rwa052023";
+$username = "rwa052023";
+$lozinka = "csdigital2023";
+$imeBaze = "rwa052023";
 
     $conn = new mysqli($imeServera, $username, $lozinka, $imeBaze);
 
@@ -222,14 +227,14 @@ session_start();
     }
 
     // Prvo dohvatite jela
-    $sqlJela = "SELECT ID, Naziv, ImageURL FROM `stavkejelovnika` WHERE `IDKategorije`=1";
+    $sqlJela = "SELECT ID, Naziv, ImageURL, Cijena FROM `stavkejelovnika` WHERE `IDKategorije`=1";
     $resultJela = $conn->query($sqlJela);
 
     echo "<h2 class='mt-5'>Jela</h2>";
     displayItems($resultJela);
 
     // Zatim dohvatite pića
-    $sqlPica = "SELECT ID, Naziv, ImageURL FROM `stavkejelovnika` WHERE `IDKategorije`=2";
+    $sqlPica = "SELECT ID, Naziv, ImageURL, Cijena FROM `stavkejelovnika` WHERE `IDKategorije`=2";
     $resultPica = $conn->query($sqlPica);
 
     echo "<h2 class='mt-5'>Pića</h2>";
@@ -245,7 +250,8 @@ session_start();
           echo "<img src='" . $row['ImageURL'] . "' class='card-img-top' alt='Menu Image'>";
           echo "<div class='card-body'>";
           echo "<h3 class='card-title'>" . $row['Naziv'] . "</h3>";
-          echo "<button class='btn btn-warning add-to-cart' data-id='" . $row['ID'] . "' data-name='" . $row['Naziv'] . "' data-quantity='1'><i class='fas fa-shopping-cart'></i> Dodaj u košaricu</button>";
+          echo "<p class='card-text'>" . $row['Cijena'] . " KM</p>";
+          echo "<button class='btn btn-warning add-to-cart' data-id='" . $row['ID'] . "' data-name='" . $row['Naziv'] . "' data-quantity='1' data-price='" . $row['Cijena'] . "'><i class='fas fa-shopping-cart'></i> Dodaj u košaricu</button>";
           echo "</div>"; // Close card-body
           echo "</div>"; // Close card
           echo "</div>"; // Close column
@@ -256,9 +262,8 @@ session_start();
       }
     }
 
-
     $conn->close();
-    ?>
+?>
 
 
     <div id="footer">

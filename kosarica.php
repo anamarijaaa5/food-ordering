@@ -159,6 +159,11 @@
         <!-- Stavke iz košarice će biti dodane ovdje -->
     </ul>
 
+    <!-- Ukupna cijena -->
+    <div class="mt-4">
+        <h5>Ukupna cijena: <span id="totalPrice">0</span> KM</h5>
+    </div>
+
     <!-- Button za naručivanje -->
     <div class="mt-4">
         <button class="btn btn-primary" id="orderButton">Naruči</button>

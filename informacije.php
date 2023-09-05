@@ -181,17 +181,22 @@ session_start();
 
       <!-- display only if role is admin -->
       <?php if (isset($_SESSION['login'])): ?>
-      <?php if ($_SESSION['uloga'] == 'Administrator'): ?>
-        <div>
-          <a style="color:gray; text-decoration: none; margin-right:10px;" href="upravljanje-korisnicima.php">Pregled
-            narudžbi</a>
-          <a style="color:gray; text-decoration: none; margin-right:10px;" href="upravljanje-korisnicima.php">Upravljanje
-            korisnicima</a>
-        </div>
-      <?php endif; ?>
+        <?php if ($_SESSION['uloga'] == 'Administrator'): ?>
+          <div>
+            <a style="color:gray; text-decoration: none; margin-right:10px;" href="upravljanje-korisnicima.php">Pregled
+              narudžbi</a>
+            <a style="color:gray; text-decoration: none; margin-right:10px;" href="upravljanje-korisnicima.php">Upravljanje
+              korisnicima</a>
+          </div>
+        <?php endif; ?>
       <?php endif; ?>
       <div class="text-center">
-        <a class="btn btn-default btn-rounded my-3" href="odjava.php">Odjava</a>
+        <!-- show only if user is logged in -->
+        <?php if (isset($_SESSION['login'])): ?>
+          <a class="btn btn-default btn-rounded my-3" href="odjava.php">Odjava</a>
+        <?php else: ?>
+          <a class="btn btn-default btn-rounded my-3" href="#" data-toggle="modal" data-target="#modalLRForm">Prijava</a>
+        <?php endif; ?>
       </div>
     </div>
   </nav>
