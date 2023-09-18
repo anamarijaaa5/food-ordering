@@ -62,8 +62,8 @@ $result = $konekcija->query("SELECT * FROM korisnik WHERE KorisnickoIme = '$Kori
 if (mysqli_num_rows($result) != 1) {
     if ($Lozinka == $Lozinka2) {
         //Dodavanje unesenih podataka u tablicu
-        $sql = "INSERT INTO korisnik (KorisnickoIme, Lozinka)
-        VALUES ('$KorisnickoIme', '$Lozinka');";
+        $sql = "INSERT INTO korisnik (KorisnickoIme, Lozinka, Uloga)
+                VALUES ('$KorisnickoIme', '$Lozinka', 'Musterija');";
 
         if ($konekcija->query($sql) === TRUE) {
             echo "<div class='container'>";
