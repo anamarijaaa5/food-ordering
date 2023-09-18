@@ -69,13 +69,6 @@ if (mysqli_num_rows($result) != 1) {
             echo "<div class='container'>";
             echo "<h1 style='text-align:center;'>Registracija uspješna!</h1>";
             
-            SELECT ID FROM korisnik WHERE KorisnickoIme='$KorisnickoIme';";
-            $konekcija->query($redak);
-
-            $uloga = "UPDATE korisnik SET Uloga ='Musterija' WHERE KorisnickoIme='$KorisnickoIme'";
-            $konekcija->query($uloga);
-            
-
             session_start();
             $_SESSION["login"] = true;
             $_SESSION["KorisnickoIme"] = $KorisnickoIme;
