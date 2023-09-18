@@ -206,48 +206,6 @@ session_start();
 
   <br><br>
 
-
-  <div id="onama">
-    <h2 style="text-align: center;">O nama</h2>
-
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card mb-4 shadow-sm">
-            <img src="slike/maja.png" class="card-img-top img-fluid" alt="slika">
-            <div class="card-body">
-              <h5 class="card-title">Maja Musa</h5>
-              <p class="card-text">22 god. 3. godina Računarstvo FSRE.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Frontend / Backend</small>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card mb-4 shadow-sm">
-            <img src="slike/anamarija.png" class="card-img-top img-fluid" alt="slika anamarija">
-            <div class="card-body">
-              <h5 class="card-title">Ana-Marija Čolak</h5>
-              <p class="card-text">22 godine student treće godine računarstva.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Frontend / Backend</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-  </div>
-  <hr>
-  <br><br><br>
-
-
   <div id="oprojektu" style="padding:20px">
 
     <div id="citava_animacija">
