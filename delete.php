@@ -2,7 +2,10 @@
 <body>
 <?php
    ob_start();
-   session_start(); 
+   session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
 
 	 if($_SESSION["uloga"] != 'Administrator')
 	{
@@ -25,7 +28,7 @@ if ($konekcija->connect_error) {
 }
 
 // Brisanje podataka sa zadanim ID-em
-$sql = "DELETE FROM Korisnik WHERE id=$id";
+$sql = "DELETE FROM korisnik WHERE id=$id";
 
 if ($konekcija->query($sql) === TRUE) {
   echo "<script> window.location.assign('upravljanje-korisnicima.php'); </script>";
