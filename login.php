@@ -69,7 +69,7 @@
             $_SESSION['KorisnikID'] = $row['ID'];
 
             $stmt->close();
-            $stmt = $conn->prepare('SELECT * FROM Korisnik WHERE KorisnickoIme = ? AND Lozinka = ? AND Uloga = ?');
+            $stmt = $conn->prepare('SELECT * FROM korisnik WHERE KorisnickoIme = ? AND Lozinka = ? AND Uloga = ?');
             $role = 'Musterija';
             $stmt->bind_param('sss', $KorisnickoIme, $Lozinka, $role);
             $stmt->execute();
