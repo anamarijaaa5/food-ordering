@@ -52,7 +52,7 @@
     $Lozinka = $_GET['lozinka1'] ?? null;
 
     if ($KorisnickoIme && $Lozinka) {
-        $stmt = $conn->prepare('SELECT * FROM Korisnik WHERE KorisnickoIme = ? AND Lozinka = ?');
+        $stmt = $conn->prepare('SELECT * FROM korisnik WHERE KorisnickoIme = ? AND Lozinka = ?');
         $stmt->bind_param('ss', $KorisnickoIme, $Lozinka);
         $stmt->execute();
         $result = $stmt->get_result();
