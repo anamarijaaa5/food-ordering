@@ -68,7 +68,7 @@ if (mysqli_num_rows($result) != 1) {
         if ($konekcija->query($sql) === TRUE) {
             echo "<div class='container'>";
             echo "<h1 style='text-align:center;'>Registracija uspješna!</h1>";
-            $redak = "INSERT INTO musterija (IDKorisnika) 
+            
             SELECT ID FROM korisnik WHERE KorisnickoIme='$KorisnickoIme';";
             $konekcija->query($redak);
 
