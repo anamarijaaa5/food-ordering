@@ -37,6 +37,10 @@
 </head>
 <body>
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+
 $imeServera = "localhost";
 $username = "rwa052023";
 $lozinka = "csdigital2023";
@@ -53,7 +57,7 @@ if (!$konekcija) {
   die("Konekcija neuspjela: " . mysqli_connect_error());
 }
 
-$result = $konekcija->query("SELECT * FROM Korisnik WHERE KorisnickoIme = '$KorisnickoIme'");
+$result = $konekcija->query("SELECT * FROM korisnik WHERE KorisnickoIme = '$KorisnickoIme'");
 
 if (mysqli_num_rows($result) != 1) {
     if ($Lozinka == $Lozinka2) {
@@ -64,11 +68,11 @@ if (mysqli_num_rows($result) != 1) {
         if ($konekcija->query($sql) === TRUE) {
             echo "<div class='container'>";
             echo "<h1 style='text-align:center;'>Registracija uspješna!</h1>";
-            $redak = "INSERT INTO Musterija (IDKorisnika) 
-            SELECT ID FROM Korisnik WHERE KorisnickoIme='$KorisnickoIme';";
+            $redak = "INSERT INTO musterija (IDKorisnika) 
+            SELECT ID FROM korisnik WHERE KorisnickoIme='$KorisnickoIme';";
             $konekcija->query($redak);
 
-            $uloga = "UPDATE Korisnik SET Uloga ='Musterija' WHERE KorisnickoIme='$KorisnickoIme'";
+            $uloga = "UPDATE korisnik SET Uloga ='Musterija' WHERE KorisnickoIme='$KorisnickoIme'";
             $konekcija->query($uloga);
             
 
