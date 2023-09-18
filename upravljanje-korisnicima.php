@@ -197,7 +197,7 @@ provjerava da li je odabrano više od 0 redaka. Ako postoji više
 od 0 redaka, funkcija fetch_assoc() ispisuje sve podatke u tablicu.
 */
 
-$sql = "SELECT ID, KorisnickoIme, Uloga FROM Korisnik";
+$sql = "SELECT ID, KorisnickoIme, Uloga FROM korisnik";
 $ispis = $konekcija->query($sql);
 
 if ($ispis -> num_rows > 0) {
